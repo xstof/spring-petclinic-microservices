@@ -1,0 +1,99 @@
+[1mdiff --git a/pom.xml b/pom.xml[m
+[1mindex 25ef7af..077f591 100644[m
+[1m--- a/pom.xml[m
+[1m+++ b/pom.xml[m
+[36m@@ -11,7 +11,7 @@[m
+ [m
+     <groupId>org.springframework.samples</groupId>[m
+     <artifactId>spring-petclinic-microservices</artifactId>[m
+[31m-    <version>2.6.7</version>[m
+[32m+[m[32m    <version>2.6.11</version>[m
+     <name>${project.artifactId}</name>[m
+     <packaging>pom</packaging>[m
+ [m
+[36m@@ -29,8 +29,8 @@[m
+         <java.version>1.8</java.version>[m
+         <assertj.version>3.17.1</assertj.version>[m
+ [m
+[31m-        <spring-boot.version>2.6.0</spring-boot.version>[m
+[31m-        <spring-cloud.version>2021.0.2</spring-cloud.version>[m
+[32m+[m[32m        <spring-boot.version>2.6.11</spring-boot.version>[m
+[32m+[m[32m        <spring-cloud.version>2021.0.4</spring-cloud.version>[m
+         <chaos-monkey-spring-boot.version>2.3.10</chaos-monkey-spring-boot.version>[m
+ [m
+         <docker.image.prefix>springcommunity</docker.image.prefix>[m
+[1mdiff --git a/spring-petclinic-admin-server/src/main/resources/application.yml b/spring-petclinic-admin-server/src/main/resources/application.yml[m
+[1mindex d745bb1..f0be784 100644[m
+[1m--- a/spring-petclinic-admin-server/src/main/resources/application.yml[m
+[1m+++ b/spring-petclinic-admin-server/src/main/resources/application.yml[m
+[36m@@ -1,8 +1,8 @@[m
+ spring:[m
+   application:[m
+     name: admin-server[m
+[31m-  config:[m
+[31m-    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}[m
+[32m+[m[32m#  config:[m
+[32m+[m[32m#    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}[m
+ [m
+ [m
+ ---[m
+[1mdiff --git a/spring-petclinic-api-gateway/src/main/resources/application.yml b/spring-petclinic-api-gateway/src/main/resources/application.yml[m
+[1mindex 48ead7d..ef18282 100644[m
+[1m--- a/spring-petclinic-api-gateway/src/main/resources/application.yml[m
+[1m+++ b/spring-petclinic-api-gateway/src/main/resources/application.yml[m
+[36m@@ -1,8 +1,8 @@[m
+ spring:[m
+   application:[m
+     name: api-gateway[m
+[31m-  config:[m
+[31m-    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}[m
+[32m+[m[32m  # config:[m
+[32m+[m[32m  #  import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}[m
+   cloud:[m
+     gateway:[m
+       routes:[m
+[1mdiff --git a/spring-petclinic-customers-service/src/main/resources/application.yml b/spring-petclinic-customers-service/src/main/resources/application.yml[m
+[1mindex 7c95adf..5dc83b0 100644[m
+[1m--- a/spring-petclinic-customers-service/src/main/resources/application.yml[m
+[1m+++ b/spring-petclinic-customers-service/src/main/resources/application.yml[m
+[36m@@ -1,8 +1,8 @@[m
+ spring:[m
+   application:[m
+     name: customers-service[m
+[31m-  config:[m
+[31m-    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}[m
+[32m+[m[32m  # config:[m
+[32m+[m[32m  #   import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}[m
+ [m
+ [m
+ ---[m
+[1mdiff --git a/spring-petclinic-vets-service/src/main/resources/application.yml b/spring-petclinic-vets-service/src/main/resources/application.yml[m
+[1mindex 983a015..8b56125 100644[m
+[1m--- a/spring-petclinic-vets-service/src/main/resources/application.yml[m
+[1m+++ b/spring-petclinic-vets-service/src/main/resources/application.yml[m
+[36m@@ -1,8 +1,8 @@[m
+ spring:[m
+   application:[m
+     name: vets-service[m
+[31m-  config:[m
+[31m-    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}[m
+[32m+[m[32m#  config:[m
+[32m+[m[32m#    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}[m
+   cache:[m
+     cache-names: vets[m
+   profiles:[m
+[1mdiff --git a/spring-petclinic-visits-service/src/main/resources/application.yml b/spring-petclinic-visits-service/src/main/resources/application.yml[m
+[1mindex ada0219..1682faf 100644[m
+[1m--- a/spring-petclinic-visits-service/src/main/resources/application.yml[m
+[1m+++ b/spring-petclinic-visits-service/src/main/resources/application.yml[m
+[36m@@ -1,8 +1,8 @@[m
+ spring:[m
+   application:[m
+     name: visits-service[m
+[31m-  config:[m
+[31m-    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}[m
+[32m+[m[32m  # config:[m
+[32m+[m[32m  #   import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}[m
+ [m
+ [m
+ ---[m
